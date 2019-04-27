@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view class='loginmain'>
+  <view class='inputView'>
+    <view>
+      <image class='nameImage' src='../images/username.png'> </image>
+      <input class='inputText' placeholder="请输入用户名" auto-focus/>
+    </view>
+  </view>
+  <view class='inputView'>
+    <view>
+      <image class='psdImage' src='../images/userpsd.png'> </image>
+      <input class='inputText' placeholder="请输入密码" password='true'/>
+    </view>
+  </view>
+  <view class="loginBtnView">
+    <button class="loginBtn">登录</button>
+  </view>
+</view>

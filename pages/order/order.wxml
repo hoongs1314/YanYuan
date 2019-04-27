@@ -1,0 +1,14 @@
+<!--pages/main/main.wxml-->
+<text>pages/main/main.wxml</text>
+
+<view class='allView'>
+  <view class='top'>
+    这是顶部
+  </view>
+  <view class='main'>
+    这是主界面
+  </view>
+  <view class='bottom'>
+    这是底部导航栏
+  </view>
+</view>

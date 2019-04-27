@@ -1,0 +1,41 @@
+<!--pages/mine/mine.wxml-->
+<view>
+  <view class='avatar'>
+    <image class='in-image' src='../images/girl1.png'></image>
+  </view>
+
+  <view class='mtext'>
+    <image src='../images/name.png'></image>
+    <text>姓名：</text>
+    <view class='mline'></view>
+  </view>
+
+  <view class='mtext'>
+    <image src='../images/sex.png'></image>
+    <text>性别：</text>
+    <view class='mline'></view>
+  </view>
+
+  <view class='mtext'>
+    <image src='../images/room.png'></image>
+    <text>宿舍号：</text>
+    <view class='mline'></view>
+  </view>
+
+  <view class='mtext'>
+    <image src='../images/phone.png'></image>
+    <text>联系方式：</text>
+    <view class='mline'></view>
+  </view>
+
+</view>
+<view class='change'>
+  <text bindlongtap='toaddperson'>
+  信息有误？点此修改
+</text>
+</view>
+<view class='addmsg' bindtap='toaddperson'>
+  <text>
+  还没有信息？点此添加
+</text>
+</view>

@@ -1,0 +1,44 @@
+/* pages/mine/mine.wxss */
+.avatar{
+ display:flex;
+ justify-content: center;
+ margin-top: 10%;
+ margin-bottom: 20px;
+}
+.avatar image{
+    width: 150px;
+    height: 150px;
+}
+.mtext{
+  height: 50px;
+  margin-left: 20px;
+}
+.mtext text{
+  margin-left: 10px;
+  font-size: 16px;
+  color: gray;
+}
+.mtext image{
+  width: 20px;
+  height: 20px;
+}
+.mline{
+  height: 1px;
+  width: 90%;
+  margin-left: 10px;
+  margin-top: 15px;
+  background-color: #5e5e5e;
+}
+.change{
+  margin-top: 25%;
+  margin-right: 15px;
+  text-align: right;
+  font-size: 12px;
+  color: #979797
+}
+.addmsg{
+  margin-top: 10px;
+  margin-left: 15px;
+  font-size: 12px;
+  color: #979797
+}

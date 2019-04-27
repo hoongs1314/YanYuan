@@ -1,0 +1,42 @@
+/* pages/login/login.wxss */
+.loginmain{
+  margin-top: 50%;
+}
+.nameImage, .psdImage {
+  margin-top: 11px;
+  margin-left: 11px;
+  width: 20px;
+  height: 20px
+}
+.inputText{
+  float: right;
+  margin-top: 10px;
+  color: #6d6d6d;
+  font-size: 14px
+}
+.loginText{
+  margin: 15px 15px 15px 10px;
+  color: #545454;
+  font-size: 14px
+}
+.inputView{
+  width: 80%;
+  height: 80rpx;
+  margin: auto auto;
+  border:1px solid #ccc;
+  border-radius: 50rpx;
+  margin-top: 100rpx
+}
+
+.loginBtnView {
+  width: 100%;
+  height: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.loginBtn {
+  background-color: white;
+  width: 80%;
+  margin-top: 150rpx;
+}

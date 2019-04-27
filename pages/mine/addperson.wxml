@@ -1,0 +1,20 @@
+<view class='mtext'>
+    <label class='labeltext'>姓名：</label>
+      <input class='inputText' auto-focus/>
+      <view class='mline'></view>
+  </view>
+  <view class='mtext'>
+    <label class='labeltext'>性别：</label>
+      <input class='inputText' auto-focus/>
+      <view class='mline'></view>
+  </view>
+  <view class='mtext'>
+    <label class='labeltext'>宿舍号：</label>
+      <input class='inputText' auto-focus/>
+      <view class='mline'></view>
+  </view>
+  <view class='mtext'>
+    <label class='labeltext'>联系方式：</label>
+      <input class='inputText' auto-focus/>
+      <view class='mline'></view>
+  </view>

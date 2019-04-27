@@ -1,0 +1,20 @@
+/* pages/mine/addperson.wxss */
+.inputText{
+  border: 10px gray;
+  height: 1px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.labeltext{
+  margin-top: 15px;
+  margin-left: 20px;
+  font-size: 16px;
+}
+.mline{
+  height: 1px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 5px;
+  background-color: #979797;
+}
