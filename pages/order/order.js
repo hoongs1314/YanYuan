@@ -29,7 +29,15 @@ Page({
             src: "../images/food/4.jpg",
             name: "冰淇淋",
             text: "3333333333333"
-        }]
+        },{
+            src: "../images/food/4.jpg",
+            name: "红烧狮子头",
+            text: "9999999999999"
+          }, {
+            src: "../images/food/4.jpg",
+            name: "i窘急",
+            text: "00000000000"
+          }]
       },
 
         /**
