@@ -45,7 +45,7 @@
   margin-left: 25px;
 }
 .addmsgbt{
-  margin-top: 40px;
+  margin-top: 40rpx;
   width: 40%;
   color: #ffffff;
   background: #8bc34a;
