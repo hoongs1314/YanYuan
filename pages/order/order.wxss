@@ -17,3 +17,31 @@
 .siwperImg {
   width: 95%;
 }
+.merchantsView{
+  width: 90%;
+  margin: auto auto;
+}
+.merchangtsIn{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.merchantsItem{
+  background-color: white;
+  height: 80px;
+  padding-top: 20px;
+  margin: auto auto;
+}
+.merchantsImg{
+  width: 80px;
+  height: 60px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+.merchantsName{
+  margin-left: 50px;
+  font-size: 30px;
+}
+.merchantsText{
+  font-size: 14px;
+  color: #858585;
+}

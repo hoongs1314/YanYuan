@@ -11,4 +11,18 @@
     </swiper>
   </view>
 
+  <view class='merchantsView'>
+    <view wx:for="{{merchants}}">
+      <view class='merchangtsIn'>
+        <view class='merchantsItem'>
+          <view>
+            <image class='merchantsImg' src='{{item.src}}' style="display:flex;float:left"></image>
+            <view class='merchantsName'>{{item.name}}</view>
+          </view>
+          <view class='merchantsText'>{{item.text}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
 </view>

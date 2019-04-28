@@ -17,18 +17,18 @@ Page({
             src: "../images/food/4.jpg"
           }
         ],
-        shangjia:[{
-          src:"",
+        merchants:[{
+          src:"../images/food/4.jpg",
           name:"布袋馍",
-          content:"111111111111"
+          text:"111111111111"
         },{
-            src: "",
+            src: "../images/food/4.jpg",
             name: "黄焖鸡",
-            content: "111111111111"
+            text: "222222222222222"
         },{
-            src: "",
+            src: "../images/food/4.jpg",
             name: "冰淇淋",
-            content: "111111111111"
+            text: "3333333333333"
         }]
       },
 
