@@ -1,1 +1,19 @@
 /* pages/main/main.wxss */
+/**index.wxss**/
+
+.pagemain {
+  height: 100%;
+  width: 100%;
+  background: #f7f7f7;
+}
+.swiperView {
+  height: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  /* border: 5px solid #aaa; */
+  background: white;
+}
+.siwperImg {
+  width: 95%;
+}

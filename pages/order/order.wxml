@@ -1,14 +1,14 @@
-<!--pages/main/main.wxml-->
-<text>pages/main/main.wxml</text>
+<!--index.wxml-->
+<view class='pagemain'>
 
-<view class='allView'>
-  <view class='top'>
-    这是顶部
+  <view>
+    <swiper class='swiperView' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image class='siwperImg' src='{{item.src}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
-  <view class='main'>
-    这是主界面
-  </view>
-  <view class='bottom'>
-    这是底部导航栏
-  </view>
+
 </view>
