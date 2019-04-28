@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/order/order",
     "pages/mine/mine",
-    "pages/mine/addperson"
+    "pages/mine/addperson/addperson",
+    "pages/mine/myorder/myorder"
   ],
   "window": {
     "backgroundTextStyle": "light",

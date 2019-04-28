@@ -30,7 +30,7 @@ Page({
         title: '保存成功'
       }),
       wx.switchTab({
-        url: '../mine/mine',
+        url: '../mine',
       })
   },
 

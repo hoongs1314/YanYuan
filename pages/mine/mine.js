@@ -6,9 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imageBoy:'../images/boy.png',
-    imageGirl:'../images/girl1.png',
-    selectImg:'imageGirl',
     name:null,
     sex:null,
     room:null,
@@ -21,7 +18,7 @@ Page({
   onLoad: function (options) {
       if (app.userData.userinfo == null){
       wx.redirectTo({
-        url: '../mine/addperson',
+        url: '../mine/addperson/addperson',
       })
     }else{
       this.setData({
@@ -37,13 +34,21 @@ Page({
         }
     }
   },
+  toMyOrder:function(){
+    wx.showToast({
+      title: '我的订单',
+    }),
+     wx.navigateTo({
+      url: '../mine/myorder/myorder'
+    })
+  },
 
   reLaunch: function () {
     wx.showToast({
       title: 'xiugai',
     })
     wx.navigateTo({
-      url: '../mine/addperson'
+      url: '../mine/addperson/addperson'
     })
   },
 

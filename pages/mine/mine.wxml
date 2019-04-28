@@ -47,5 +47,5 @@
 </view>
 
 <view>
-<button class='toMyOrder'>查看我的订单</button>
+  <button class='toMyOrder' bindtap='toMyOrder'>查看我的订单</button>
 </view>
