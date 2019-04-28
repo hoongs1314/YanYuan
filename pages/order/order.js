@@ -17,6 +17,19 @@ Page({
             src: "../images/food/4.jpg"
           }
         ],
+        shangjia:[{
+          src:"",
+          name:"布袋馍",
+          content:"111111111111"
+        },{
+            src: "",
+            name: "黄焖鸡",
+            content: "111111111111"
+        },{
+            src: "",
+            name: "冰淇淋",
+            content: "111111111111"
+        }]
       },
 
         /**
