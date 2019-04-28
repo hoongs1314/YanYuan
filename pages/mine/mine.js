@@ -35,18 +35,12 @@ Page({
     }
   },
   toMyOrder:function(){
-    wx.showToast({
-      title: '我的订单',
-    }),
      wx.navigateTo({
       url: '../mine/myorder/myorder'
     })
   },
 
-  reLaunch: function () {
-    wx.showToast({
-      title: 'xiugai',
-    })
+  torevise: function () {
     wx.navigateTo({
       url: '../mine/addperson/addperson'
     })

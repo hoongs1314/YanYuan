@@ -43,7 +43,7 @@
     <view>{{phone}}</view>
     <view class='mline'></view>
   </view>
-
+  <view bindtap='torevise'>信息错误？点此修改</view>
 </view>
 
 <view>

@@ -5,7 +5,7 @@
   <view class='pagemain'>
     <view class='inputView' style="display:flex;float:left">
       <label class='inputLabel'>姓 名：</label>
-      <input class='inputText' bindinput='nameInput'></input>
+      <input class='inputText' maxlength = "8" bindinput='nameInput'></input>
     </view>
 
     <view class='radioView'>
@@ -17,12 +17,12 @@
 
     <view class='inputView' style="display:flex;float:left">
       <label class='inputLabel'>宿 舍：</label>
-      <input class='inputText' bindinput='roomInput'></input>
+      <input class='inputText' type="number" maxlength="5" bindinput='roomInput'></input>
     </view>
 
     <view class='inputView' style="display:flex;float:left">
       <label class='inputLabel'>手 机：</label>
-      <input class='inputText' bindinput='phoneInput'></input>
+      <input class='inputText' type='number' maxlength='11' bindinput='phoneInput'></input>
     </view>
 
     <view bindtap='toaSaveMsg'>
