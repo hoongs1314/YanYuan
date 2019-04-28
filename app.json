@@ -23,9 +23,9 @@
       },
       {
         "pagePath": "pages/order/order",
-        "text": "订单",
-        "iconPath": "images/order.png",
-        "selectedIconPath": "images/order2.png"
+        "text": "商家",
+        "iconPath": "images/merchant.png",
+        "selectedIconPath": "images/merchant2.png"
       },
       {
         "pagePath": "pages/mine/mine",

@@ -47,6 +47,12 @@
 .addmsgbt{
   margin-top: 40px;
   width: 40%;
-  color: #353535;
-  background: #c7c7c7;
+  color: #ffffff;
+  background: #8bc34a;
+}
+.box{
+  /* margin: 0 auto; */
+  border-radius: 25px;
+
+  background: #f7f7f7;
 }
