@@ -1,20 +1,30 @@
-<view class='mtext'>
-    <label class='labeltext'>姓名：</label>
-      <input class='inputText' auto-focus/>
-      <view class='mline'></view>
+<view class='title'>
+  <text>请完善个人信息</text>
+</view>
+<view class='pagemain'>
+  <view class='inputView' style="display:flex;float:left">
+    <label class='inputLabel'>姓 名：</label>
+    <input class='inputText' bindinput='nameInput'></input>
   </view>
-  <view class='mtext'>
-    <label class='labeltext'>性别：</label>
-      <input class='inputText' auto-focus/>
-      <view class='mline'></view>
+
+  <view class='radioView'>
+    <radio-group class='radiog' bindchange='sexInput'>
+      <radio class='radio' value='男'>男</radio>
+      <radio class='radio' value='女'>女</radio>
+    </radio-group>
   </view>
-  <view class='mtext'>
-    <label class='labeltext'>宿舍号：</label>
-      <input class='inputText' auto-focus/>
-      <view class='mline'></view>
+
+  <view class='inputView' style="display:flex;float:left">
+    <label class='inputLabel'>宿 舍：</label>
+    <input class='inputText' bindinput='roomInput'></input>
   </view>
-  <view class='mtext'>
-    <label class='labeltext'>联系方式：</label>
-      <input class='inputText' auto-focus/>
-      <view class='mline'></view>
+
+  <view class='inputView' style="display:flex;float:left">
+    <label class='inputLabel'>手 机：</label>
+    <input class='inputText' bindinput='phoneInput'></input>
   </view>
+
+  <view bindtap='toaSaveMsg'>
+    <button class='addmsgbt'>保 存</button>
+  </view>
+</view>

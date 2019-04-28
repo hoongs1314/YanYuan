@@ -1,41 +1,49 @@
 <!--pages/mine/mine.wxml-->
 <view>
   <view class='avatar'>
-    <image class='in-image' src='../images/girl1.png'></image>
+    <image wx:if="{{data.selectImg}}" class='in-image' src='{{data.selectImg}}'></image>
   </view>
 
   <view class='mtext'>
-    <image src='../images/name.png'></image>
-    <text>姓名：</text>
+    <view style='display:flex;float:left'>
+      <image src='../images/name.png'></image>
+      <text name='name'>姓 名：</text>
+    </view>
+    <view>{{name}}</view>
     <view class='mline'></view>
   </view>
 
   <view class='mtext'>
-    <image src='../images/sex.png'></image>
-    <text>性别：</text>
+    <view style='display:flex;float:left'>
+      <image src='../images/sex.png'></image>
+      <text name='sex'>性 别：</text>
+    </view>
+    <view>{{sex}}</view>
     <view class='mline'></view>
   </view>
 
   <view class='mtext'>
-    <image src='../images/room.png'></image>
-    <text>宿舍号：</text>
+    <view style='display:flex;float:left'>
+      <image src='../images/room.png'></image>
+      <text name='room'>宿舍号：</text>
+    </view>
+    <view>{{room}}</view>
     <view class='mline'></view>
   </view>
 
   <view class='mtext'>
-    <image src='../images/phone.png'></image>
-    <text>联系方式：</text>
+    <view style='display:flex;float:left'>
+      <image src='../images/phone.png'></image>
+      <text name='phone'>手机号：</text>
+    </view>
+    <view>{{phone}}</view>
     <view class='mline'></view>
   </view>
 
 </view>
-<view class='change'>
-  <text bindlongtap='toaddperson'>
-  信息有误？点此修改
-</text>
-</view>
-<view class='addmsg' bindtap='toaddperson'>
-  <text>
-  还没有信息？点此添加
-</text>
+
+<view class='change' bindlongtap='toChange'>
+  <button class='changebt'>
+    信息有误？点此修改
+  </button>
 </view>

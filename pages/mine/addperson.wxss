@@ -1,20 +1,52 @@
 /* pages/mine/addperson.wxss */
+.title{
+  padding-top: 20px;
+  text-align: center;
+  font-size: 36px;
+  color: black;
+  line-height: 60px;
+}
+.inputView{
+  margin-top: 50px;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
 .inputText{
-  border: 10px gray;
-  height: 1px;
+  height: 30px;
   width: 60%;
   margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid  #979797;
 }
-
-.labeltext{
+.inputLabel{
   margin-top: 15px;
-  margin-left: 20px;
-  font-size: 16px;
+  margin-left: 30px;
+  font-size: 20px;
+  height: 30px;
 }
-.mline{
-  height: 1px;
-  width: 60%;
+.radioView{
+  margin-top: 50px;
+  margin-bottom: 20px;
   margin: 0 auto;
-  margin-top: 5px;
-  background-color: #979797;
+  padding-top: 50px;
+  text-align: center;
+}
+.radiog{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+}
+.radio{
+  height: 30px;
+  width: 40px;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+.addmsgbt{
+  margin-top: 40px;
+  width: 40%;
+  color: #353535;
+  background: #c7c7c7;
 }
