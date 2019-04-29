@@ -20,14 +20,19 @@ Page({
   },
 
   toaSaveMsg: function() {
+   
     app.userData.userinfo = {
       name: this.data.name,
       sex: this.data.sex,
       room: this.data.room,
       phone: this.data.phone
     }
-    wx.showToast({
-        title: '保存成功'
+    wx.setStorage({
+      key: 'userinfo',
+      data: app.userData.userinfo
+      }),
+      wx.showToast({
+        title: '保存成功1'
       }),
       wx.switchTab({
         url: '../mine',
@@ -101,5 +106,5 @@ Page({
     this.setData({
       sex: event.detail.value
     })
-  }
+  },
 })

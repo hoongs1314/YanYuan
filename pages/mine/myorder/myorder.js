@@ -1,18 +1,43 @@
 // pages/mine/myorder/myorder.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    food:[{
+      id:"1",
+      name: "黄焖鸡",
+      price: "32元",
+      num: "1份",
+    },{
+      id:"2",
+      name:"红烧狮子头",
+      price:"50元",
+      num:"3份"
+    },{
+      id:"3",
+      name:"巧克力冰淇淋",
+      price:"12元",
+      num:"1份"
+    }],
+      userName:null,
+      userSex:null,
+      userRoom:null,
+      userPhone:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      userName: app.userData.userinfo.name,
+      userSex: app.userData.userinfo.sex,
+      userRoom: app.userData.userinfo.room,
+      userPhone: app.userData.userinfo.phone,
+    })
   },
 
   /**
