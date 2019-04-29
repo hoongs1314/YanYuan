@@ -78,6 +78,7 @@
   background-color: white;
 }
 .toMyOrder{
+  font-size: 40rpx;
   margin-top: 40rpx;
   width: 40%;
   color: #ffffff;

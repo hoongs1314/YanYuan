@@ -1,31 +1,42 @@
 <!--pages/mine/myorder/myorder.wxml-->
 <view>
   <view class='myMsg'>
-    <text class='myMsgTitle'>个人信息：</text>
+    <view class='myMsgTitle'>个人信息：</view>
 
-    <view class='myMsgItem' style="display:flex;float:left">
-      <view style='width:30%;padding-left:20rpx;'>{{userName}}</view>
-      <view>{{userSex}}</view>
+    <view class='myMsgItem'>
+      <view style='width:30%;padding-left:20rpx;display:flex;float:left'>
+        name:{{userName}}</view>
+      <view>sex:{{userSex}}</view>
     </view>
 
-    <view class='myMsgItem' style="display:flex;float:left">
-      <view class='myMsgItem-text' style='width:30%;padding-left:20rpx;'>
-        {{userRoom}}
+    <view class='myMsgItem'>
+      <view class='myMsgItem-text' style='width:30%;padding-left:20rpx;display:flex;float:left'>
+        room:{{userRoom}}
       </view>
-      <view class='myMsgItem-text'>{{userPhone}}</view>
+      <view class='myMsgItem-text'>phone:{{userPhone}}</view>
     </view>
 
   </view>
 
-  <view class='myOrderMsg' wx:for="{{food}}" wx:key="food">
-    <view>订单信息：</view>
-    <view class='myOrderMsgIn' style="display:flex;float:left">
-      <view>{{food.id}}</view>
-      <view>{{item.name}}</view>
-      <view>{{item.price}}</view>
-      <view>{{item.num}}</view>
-      <view>{{item.id}}</view>
+  <view class='myAllOrder'>
+    <view class='myOrderTitle'>订单信息：</view>
+    <view class='myOrderMsg' wx:for="{{food}}" wx:key="food">
+      <view class='myOrderMsgItem'>
+
+        <image class='orderImg' src='{{item.src}}' style='display:flex;float:left'></image>
+        <view class='orderDetail'>
+          <view class='orderDetail-name'>{{item.name}}</view>
+          <view class='orderDetail-other'>
+            <view style='display:flex;float:right'>{{item.price}}</view>
+            <view>{{item.num}}</view>
+          </view>
+        </view>
+      </view>
     </view>
+  </view>
+
+  <view>
+    <button class='SubmitOrder' bindtap='toSubmitOrder'>提交订单</button>
   </view>
 
 

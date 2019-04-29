@@ -3,7 +3,7 @@
 
   <view>
     <swiper class='swiperView' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
-      <block wx:for="{{imgUrls}}">
+      <block wx:for="{{imgUrls}}" wx:key="imgUrls">
         <swiper-item>
           <image class='siwperImg' src='{{item.src}}'></image>
         </swiper-item>
@@ -12,7 +12,7 @@
   </view>
 
   <view class='merchantsView'>
-    <view wx:for="{{merchants}}">
+    <view wx:for="{{merchants}}" wx:key="merchants">
       <view class='merchangtsIn'>
         <view class='merchantsItem'>
           <view>

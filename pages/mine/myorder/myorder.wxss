@@ -17,9 +17,11 @@
 .myMsgTitle {
   margin:  0 auto;
   font-size: 40rpx;
-  width: 50%;
+  text-align: center;
+  width: 40%;
+  height: 50rpx;
   border-radius: 10%;
-  background: rgb(240, 189, 81);
+  background: rgb(253, 225, 163);
 }
 
 .myMsgIn {
@@ -37,16 +39,62 @@
 }
 
 .myMsgItem-text {
-  font-size: 16rpx;
+  font-size: 30rpx;
 }
 
 .myAllOrder {
+  width: 90%;
+  height: 100%;
   margin: 0 auto;
   margin-top: 30rpx;
 }
-
+.myOrderTitle{
+  margin:  0 auto;
+  font-size: 40rpx;
+  text-align: center;
+  width: 40%;
+  height: 50rpx;
+  border-radius: 10%;
+  background: rgb(253, 225, 163);
+}
 .myOrderMsg {
   height: 20%;
-  width: 90%;
+  margin: 0 auto;
   border-bottom: 1px solid #b8b8b8 background-color：white;
+}
+.myOrderMsgItem{
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  background: #eeeeee;
+  border-radius: 5%;
+  height: 20%;
+  width: 100%;
+}
+.orderImg{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+.orderDetail{
+  width: 95%;
+  height: 90%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.orderDetail-name{
+  font-size: 50rpx;
+  color: black;
+}
+.orderDetail-other{
+  font-size: 30rpx;
+  color: #b3b3b3;
+}
+.SubmitOrder{
+  font-size: 40rpx;
+  margin-top: 40rpx;
+  width: 40%;
+  color: #ffffff;
+  background: #8bc34a;
 }
