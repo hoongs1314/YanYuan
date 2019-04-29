@@ -12,7 +12,8 @@
   </view>
 
   <view class='merchantsView'>
-    <view wx:for="{{merchants}}" wx:key="merchants">
+    <view wx:for="{{merchants}}" wx:for-item="item" wx:key="item.id" 
+    data-item="{{item}}" data-src='{{item.src}}' data-id='{{item.id}}' data-name='{{item.name}}' data-text='{{item.text}}' bindtap='itemClick'>
       <view class='merchangtsIn'>
         <view class='merchantsItem'>
           <view>
