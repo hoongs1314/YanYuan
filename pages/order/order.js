@@ -21,27 +21,44 @@ Page({
       id: "001",
       src: "../images/food/4.jpg",
       name: "布袋馍",
-      text: "111111111111"
+      text: "111111111111",
+      imgsrc: "../../images/imgicon/budaimo.png",
+      dianjia: "大嘴布袋馍",
+      dianjiagonggao: "公告：大嘴布袋馍好吃不贵"
     }, {
       id: "002",
       src: "../images/food/4.jpg",
       name: "黄焖鸡",
-      text: "222222222222222"
+      text: "222222222222222",
+      imgsrc: "../../images/imgicon/budaimo.png",
+      dianjia: "黄焖鸡",
+      dianjiagonggao: "公告：绝蜜香鸡，等你来寻"
     }, {
       id: "003",
       src: "../images/food/4.jpg",
       name: "冰淇淋",
-      text: "3333333333333"
+      text: "3333333333333",
+      imgsrc: "../../images/imgicon/budaimo.png",
+      dianjia: "冰淇淋",
+      dianjiagonggao: "公告：不长胖的冰淇淋"
     }, {
       id: "004",
       src: "../images/food/4.jpg",
       name: "红烧狮子头",
-      text: "9999999999999"
+      text: "9999999999999",
+      imgsrc: "../../images/imgicon/budaimo.png",
+      dianjia: "红烧狮子头",
+      dianjiagonggao: "公告：你看这个“头”他又大又圆"
+
     }, {
       id: "005",
       src: "../images/food/4.jpg",
-      name: "i窘急",
-      text: "00000000000"
+      name: "鱼香肉丝",
+      text: "00000000000",
+      imgsrc: "../../images/imgicon/budaimo.png",
+      dianjia: "鱼香肉丝",
+
+      dianjiagonggao: "公告：真的有鱼"
     }]
   },
 
@@ -52,12 +69,12 @@ Page({
 
   },
   itemClick: function(item) {
-    console.log(item.currentTarget.dataset.id);
-    console.log(item.currentTarget.dataset.name);
-    console.log(item.currentTarget.dataset.src);
-    console.log(item.currentTarget.dataset.text);
-    this.setData({
-
+    var id=item.currentTarget.dataset.id;
+    var imgsrc = item.currentTarget.dataset.imgsrc;
+    var dianjia = item.currentTarget.dataset.dianjia;
+    var dianjiagonggao = item.currentTarget.dataset.dianjiagonggao;
+    wx.navigateTo({
+      url: 'orderItem/orderItem?id=' + id +  "&imgsrc=" + imgsrc + "&dianjia=" + dianjia + "&dianjiagonggao=" + dianjiagonggao 
     })
   },
   /**

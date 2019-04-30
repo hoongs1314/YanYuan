@@ -1,0 +1,7 @@
+<!--pages/order/orderItem/orderItem.wxml-->
+<view class='header'>
+<image class='logo' src='{{imgsrc}}'></image>
+<view class='name ellipsis'>{{dianjia}}</view>
+<view class='welcome ellipsis'>{{dianjiagonggao}}</view>
+<view class='line'></view>
+ </view>

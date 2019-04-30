@@ -1,0 +1,50 @@
+/* pages/order/orderItem/orderItem.wxss */
+.yetoutupian{
+  height: 250rpx;
+}
+.yetoutupian image{
+  height: 250rpx;
+  width: 750rpx;
+}
+.header {
+position:relative;
+background:#feb70f;
+padding:20rpx 40rpx;
+color:#000;
+}
+.header .logo {
+float:left;
+width:160rpx;
+height:160rpx;
+border:2rpx solid #fff;
+border-radius:50%;
+margin-right:10px;
+
+}
+.header .name {
+padding-top:20rpx;
+font-size:36rpx;
+line-height:60rpx;
+
+}
+.ellipsis {
+white-space:nowrap;
+text-overflow:ellipsis;
+overflow:hidden;
+
+}
+.header .welcome {
+color:#333;
+font-size:30rpx;
+width:360rpx;
+line-height:70rpx;
+
+}
+.header .line {
+clear:both;
+width:100%;
+height:1px;
+border-bottom:1px dashed #000;
+padding-top:20rpx;
+
+}
