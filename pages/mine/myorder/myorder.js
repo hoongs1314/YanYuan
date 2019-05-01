@@ -60,6 +60,14 @@ Page({
           console.log("确定");
           wx.showToast({
             title: '订单已提交',
+            duration:2000,
+            success:function(){
+              setTimeout(function(){
+                wx.navigateBack({
+                  url: "../mine"
+                })
+              },2000)
+            }
           })
         }else{
           console.log("我再想想");

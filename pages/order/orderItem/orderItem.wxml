@@ -1,7 +1,29 @@
 <!--pages/order/orderItem/orderItem.wxml-->
 <view class='header'>
-<image class='logo' src='{{imgsrc}}'></image>
-<view class='name ellipsis'>{{dianjia}}</view>
-<view class='welcome ellipsis'>{{dianjiagonggao}}</view>
-<view class='line'></view>
- </view>
+  <image class='logo' src='{{src}}'></image>
+  <view class='name ellipsis'>{{name}}</view>
+  <view class='welcome ellipsis'>{{text}}</view>
+  <view class='line'></view>
+</view>
+
+  <scroll-view class='allfood' scroll-y="true" >
+    <view class='color' style='background:black;'></view>
+    <view class='color' style='background:#999999;'></view>
+    <view class='color' style='background:#333333;'></view>
+    <view class='color' style='background:#666666;'></view>
+
+    <view class='color' style='background:black;'></view>
+    <view class='color' style='background:#999999;'></view>
+    <view class='color' style='background:#333333;'></view>
+    <view class='color' style='background:#666666;'></view>
+    
+    <view class='color' style='background:black;'></view>
+    <view class='color' style='background:#999999;'></view>
+    <view class='color' style='background:#333333;'></view>
+    <view class='color' style='background:#666666;'></view>
+    
+    <view class='color' style='background:black;'></view>
+    <view class='color' style='background:#999999;'></view>
+    <view class='color' style='background:#333333;'></view>
+    <view class='color' style='background:#666666;'></view>
+  </scroll-view>

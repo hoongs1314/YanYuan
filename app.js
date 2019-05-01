@@ -1,16 +1,15 @@
 //app.js
-
-var user;
 App({
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function () {
+    var that = this
     wx.getStorage({
       key: 'userinfo',
       success: function (res) {
-        console.log(res.data)
-        user = res.data
+        that.userData.userinfo=res.data
+        console.log(that.userData.userinfo)
       },
     })
   },
@@ -36,6 +35,7 @@ App({
     
   },
   userData:{
-    userinfo: user,
+    userinfo: null,
+    userMsg:null,
   }
 })

@@ -20,7 +20,7 @@ Page({
   },
 
   toaSaveMsg: function() {
-   
+
     app.userData.userinfo = {
       name: this.data.name,
       sex: this.data.sex,
@@ -28,14 +28,20 @@ Page({
       phone: this.data.phone
     }
     wx.setStorage({
-      key: 'userinfo',
-      data: app.userData.userinfo
+        key: 'userinfo',
+        data: app.userData.userinfo
       }),
       wx.showToast({
-        title: '保存成功1'
-      }),
-      wx.switchTab({
-        url: '../mine',
+        title: '保存成功',
+        duration: 2000,
+        success: function () {
+          console.log("success")
+          setTimeout(function () {
+            wx.switchTab({
+              url: "../mine"
+            })
+          }, 2000)
+        }
       })
   },
 

@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    user:null,
     name: null,
     sex: null,
     room: null,
@@ -17,6 +18,8 @@ Page({
    */
   onLoad: function(options) {
     if (app.userData.userinfo == null) {
+      console.log(app.userData.userinfo)
+      console.log(that.data.user)
       wx.redirectTo({
         url: '../mine/addperson/addperson',
       })
@@ -30,7 +33,7 @@ Page({
       this.saveData;
     }
   },
-  
+
   toMyOrder: function() {
     wx.navigateTo({
       url: '../mine/myorder/myorder'
@@ -38,7 +41,7 @@ Page({
   },
 
   torevise: function() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../mine/addperson/addperson'
     })
   },
