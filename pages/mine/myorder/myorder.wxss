@@ -74,27 +74,39 @@
   margin-top: 20rpx;
   margin-left: 20rpx;
   margin-right: 20rpx;
-  width: 80rpx;
-  height: 80rpx;
+  width: 120rpx;
+  height: 120rpx;
 }
 .orderDetail{
   width: 95%;
-  height: 90%;
   margin: 0 auto;
   margin-top: 20rpx;
 }
 .orderDetail-name{
-  font-size: 50rpx;
+  font-size: 30rpx;
   color: black;
+  display: flex;
+  float: left
 }
 .orderDetail-other{
-  font-size: 30rpx;
+  font-size: 25rpx;
   color: #b3b3b3;
+  float: right
+}
+.bottom{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin-top: 100rpx;
+  background: #f8c006;
 }
 .SubmitOrder{
   font-size: 40rpx;
-  margin-top: 40rpx;
   width: 40%;
+  position: fixed;
+  bottom: 100rpx;
+  margin: auto auto;
   color: #ffffff;
   background: #8bc34a;
 }
