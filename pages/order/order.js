@@ -17,48 +17,55 @@ Page({
         src: "../images/food/4.jpg"
       }
     ],
-    merchants: [{
-      id: "001",
-      src: "/pages/images/food/4.jpg",
-      name: "布袋馍",
-      text: "大嘴布袋馍好吃不贵",
-    }, {
-      id: "002",
-      src: "/pages/images/food/4.jpg",
-      name: "黄焖鸡",
-      text: "绝蜜香鸡，等你来寻",
-    }, {
-      id: "003",
-      src: "/pages/images/food/4.jpg",
-      name: "冰淇淋",
-      text: "不长胖的冰淇淋",
-    }, {
-      id: "004",
-      src: "/pages/images/food/4.jpg",
-      name: "红烧狮子头",
-      text: "你看这个“头”他又大又圆",
-
-    }, {
-      id: "005",
-      src: "/pages/images/food/4.jpg",
-      name: "鱼香肉丝",
-      text: "鱼香肉丝真的有鱼",
-    }]
+    merchants: {
+      HuangMenJi_region: null,
+      region_3: null,
+      phone: null,
+      rice_region: null,
+      BanFan_region: null,
+      drinks_region: null,
+      merchant_name: null,
+      region_1: null,
+      region_2: null,
+      menu_id: null,
+      recommend:null,
+      image:null,
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var that = this;
+    wx.request({
+      url: 'http://192.168.199.161:8080/weChat/findMenu.order',
+      method: 'post',
+      data: that.data.merchants,
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function(res) {
+        that.setData({
+          merchants: res.data,
+          //res代表success函数的事件对，data是固定的，list是数组
+        })
+        console.log(that.data.merchants);
+      },
+      fail: function(err) {
+        console.log("传输失败");
+      }
+    })
   },
   itemClick: function(item) {
     var id = item.currentTarget.dataset.id;
     var src = item.currentTarget.dataset.src;
     var name = item.currentTarget.dataset.name;
     var text = item.currentTarget.dataset.text;
+    var region_1 = item.currentTarget.dataset.region_1;
+    console.log(region_1);
     wx.navigateTo({
-      url: 'orderItem/orderItem?id=' + id + "&src=" + src + "&name=" + name + "&text=" + text
+      url: 'orderItem/orderItem?id=' + id + "&src=" + src + "&name=" + name + "&text=" + text + "&region_1=" + region_1
     })
   },
   /**

@@ -8,23 +8,22 @@ Page({
     id: null,
     src: null,
     name: null,
-    text: null
-
+    text: null,
+    region1:null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.setData({
-
+    var that = this;
+    that.setData({
       id: options.id,
       src: options.src,
       name: options.name,
-      text: options.text
+      text: options.text,
+      region_1: options.region_1,
     })
-
-
   },
 
   /**

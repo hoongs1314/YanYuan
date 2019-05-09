@@ -12,15 +12,14 @@
   </view>
 
   <view class='merchantsView'>
-    <view wx:for="{{merchants}}" wx:for-item="item" wx:key="item.id" 
-    data-item="{{item}}" data-src='{{item.src}}' data-id='{{item.id}}' data-name='{{item.name}}' data-text='{{item.text}}' data-dianjia='{{item.dianjia}}' data-dianjiagonggao='{{item.dianjiagonggao}}' data-imgsrc='{{item.imgsrc}}' bindtap='itemClick'>
+    <view wx:for="{{merchants}}" wx:for-item="item" wx:key="item.id" data-item="{{item}}" data-src='{{item.image}}' data-id='{{item.menu_id}}' data-name='{{item.merchant_name}}' data-text='{{item.recommend}}' data-region_1='{{item.region_1}}' bindtap='itemClick'>
       <view class='merchangtsIn'>
         <view class='merchantsItem'>
           <view>
-            <image class='merchantsImg' src='{{item.src}}' style="display:flex;float:left"></image>
-            <view class='merchantsName'>{{item.name}}</view>
+            <image class='merchantsImg' src='{{item.image}}' style="display:flex;float:left"></image>
+            <view class='merchantsName'>{{item.merchant_name}}</view>
           </view>
-          <view class='merchantsText'>{{item.text}}</view>
+          <view class='merchantsText'>{{item.recommend}}</view>
         </view>
       </view>
     </view>

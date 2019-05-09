@@ -136,7 +136,6 @@ Page({
     var that = this;
     that.setData({
       customer:{
-        userId:'1',
         userName: app.userData.userinfo.name,
         userSex: app.userData.userinfo.sex,
         userRoom: app.userData.userinfo.room,
@@ -151,7 +150,7 @@ Page({
       success(res) {
         if (res.confirm) {
           wx.request({
-            url: 'http://192.168.199.161:8080/weChat/findData.wechat',
+            url: 'http://192.168.199.161:8080/weChat/insertCustomer.order',
             method:'post',
             data: that.data.customer,
             header: {

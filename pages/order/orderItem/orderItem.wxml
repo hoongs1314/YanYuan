@@ -6,24 +6,5 @@
   <view class='line'></view>
 </view>
 
-  <scroll-view class='allfood' scroll-y="true" >
-    <view class='color' style='background:black;'></view>
-    <view class='color' style='background:#999999;'></view>
-    <view class='color' style='background:#333333;'></view>
-    <view class='color' style='background:#666666;'></view>
-
-    <view class='color' style='background:black;'></view>
-    <view class='color' style='background:#999999;'></view>
-    <view class='color' style='background:#333333;'></view>
-    <view class='color' style='background:#666666;'></view>
-    
-    <view class='color' style='background:black;'></view>
-    <view class='color' style='background:#999999;'></view>
-    <view class='color' style='background:#333333;'></view>
-    <view class='color' style='background:#666666;'></view>
-    
-    <view class='color' style='background:black;'></view>
-    <view class='color' style='background:#999999;'></view>
-    <view class='color' style='background:#333333;'></view>
-    <view class='color' style='background:#666666;'></view>
-  </scroll-view>
+<!-- <view wx:for="{{region_1}}"></view> -->
+<view>{{region_1}}</view>
