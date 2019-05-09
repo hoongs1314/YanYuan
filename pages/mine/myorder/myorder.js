@@ -39,7 +39,8 @@ Page({
     userName: null,
     userSex: null,
     userRoom: null,
-    userPhone: null
+    userPhone: null,
+    customer:null,
   },
 
   /**
@@ -132,6 +133,16 @@ Page({
     }
   },
   toSubmitOrder: function() {
+    var that = this;
+    that.setData({
+      customer:{
+        userId:'1',
+        userName: app.userData.userinfo.name,
+        userSex: app.userData.userinfo.sex,
+        userRoom: app.userData.userinfo.room,
+        userPhone: app.userData.userinfo.phone
+      }
+    })
     wx.showModal({
       title: '订单确认',
       content: '确认提交订单吗？',
@@ -139,7 +150,22 @@ Page({
       cancelText: '我再想想',
       success(res) {
         if (res.confirm) {
+          wx.request({
+            url: 'http://192.168.199.161:8080/weChat/findData.wechat',
+            method:'post',
+            data: that.data.customer,
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function (res) {
+              console.log(that.data.customer);              
+            },
+            fail: function (err) {
+              console.log("传输失败");
+            }
+          })
           console.log("确定");
+          console.log(that.data.customer);
           wx.showToast({
             title: '订单已提交',
             duration: 2000,
