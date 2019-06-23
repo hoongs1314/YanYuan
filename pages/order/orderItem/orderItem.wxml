@@ -3,8 +3,10 @@
   <image class='logo' src='{{src}}'></image>
   <view class='name ellipsis'>{{name}}</view>
   <view class='welcome ellipsis'>{{text}}</view>
-  <view class='line'></view>
 </view>
-
-<!-- <view wx:for="{{region_1}}"></view> -->
-<view>{{region_1}}</view>
+<view class='allFood'>
+  <view class='foodItem' wx:for="{{region_1}}" wx:key="{{item.dishName}}">
+    <view bindtap='addCount' style="display:flex;float:right">+</view>
+    <view>{{item.dishName}}</view>
+  </view>
+</view>

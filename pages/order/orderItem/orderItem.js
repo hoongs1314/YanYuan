@@ -9,23 +9,40 @@ Page({
     src: null,
     name: null,
     text: null,
-    region1:null,
+    mregion_1:null,
+    region_1:{},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var that = this;
-    that.setData({
+    this.setData({
       id: options.id,
       src: options.src,
       name: options.name,
       text: options.text,
-      region_1: options.region_1,
+      mregion_1: JSON.stringify(options.region_1).split("，"),
     })
+    for (let i = 0; i < this.data.mregion_1.length ; i++){
+      var dish = "region_1[" + i + "].dishName"
+      this.setData({
+        [dish]: this.data.mregion_1[i]
+      })
+    }
+    console.log(this.data)
   },
-
+  addCount(e) {
+    const index = e.currentTarget.dataset.index;
+    let carts = this.data.carts;
+    let num = carts[index].num;
+    num = num + 1;
+    carts[index].num = num;
+    this.setData({
+      carts: carts
+    });
+    this.getTotalPrice();
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -39,7 +39,7 @@ Page({
   onLoad: function(options) {
     var that = this;
     wx.request({
-      url: 'http://192.168.199.161:8080/weChat/findMenu.order',
+      url: 'http://192.168.199.186:8080/weChat/findMenu.order',
       method: 'post',
       data: that.data.merchants,
       header: {

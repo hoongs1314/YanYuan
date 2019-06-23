@@ -150,7 +150,7 @@ Page({
       success(res) {
         if (res.confirm) {
           wx.request({
-            url: 'http://192.168.199.161:8080/weChat/insertCustomer.order',
+            url: 'http://192.168.199.186:8080/weChat/insertCustomer.order',
             method:'post',
             data: that.data.customer,
             header: {
