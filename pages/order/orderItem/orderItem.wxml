@@ -8,5 +8,6 @@
   <view class='foodItem' wx:for="{{region_1}}" wx:key="{{item.dishName}}">
     <view bindtap='addCount' style="display:flex;float:right">+</view>
     <view>{{item.dishName}}</view>
+    
   </view>
 </view>

@@ -1,23 +1,37 @@
 <!--pages/mine/myorder/myorder.wxml-->
-<view>
-  <view class='myMsg'>
-    <view class='myMsgTitle'>个人信息：</view>
+<view id='page'>
+  <view>
+    <view class='myMsg'>
+      <view class='myMsgTitle'>个人信息：</view>
 
-    <view class='myMsgItem'>
-      <view style='width:30%;padding-left:20rpx;display:flex;float:left'>
-        name:{{userName}}</view>
-      <view>sex:{{userSex}}</view>
-    </view>
+      <view class='myMsgItem'>
+        <view class='myMsgoItem'>
+          名字:{{userName}}
+          <text style='color:rgb(253, 225, 163)'>||</text> 性别:{{userSex}}
+        </view>
+        <view class='myMsgtItem'>
+          寝室:{{userRoom}}
+          <text style='color:rgb(253, 225, 163)'>||</text> 电话:{{userPhone}}
+        </view>
 
-    <view class='myMsgItem'>
-      <view class='myMsgItem-text' style='width:30%;padding-left:20rpx;display:flex;float:left'>
-        room:{{userRoom}}
       </view>
-      <view class='myMsgItem-text'>phone:{{userPhone}}</view>
-    </view>
 
-  </view>
-<!-- 
+
+
+    </view>
+    <view style='margin-top:80rpx; color:grey'>
+      <view class="m_button-line">
+        <block wx:for="i <= 4" wx:key="i">
+          <view class='m_button-line-1'></view>
+          <view class='m_button-line-2'></view>
+          <view class='m_button-line-3'></view>
+          <view class='m_button-line-2'></view>
+        </block>
+      </view>
+
+
+    </view>
+    <!-- 
   <view class='myAllOrder'>
     <view class='myOrderTitle'>订单信息：</view>
     <view class='myOrderMsg' wx:for="{{food}}" wx:key="food">
@@ -36,50 +50,56 @@
   </view> -->
 
 
-  <view class="myAllOrder">
-    <!-- wx:for 渲染购物车列表 -->
-    <view class='myOrderMsg' wx:for="{{carts}}" wx:key="carts" style='display:flex;float:left'>
+    <view class="myAllOrder">
+      <view class='myMsgTitle'>购物车：</view>
+      <!-- wx:for 渲染购物车列表 -->
+      <view class='myOrderMsg' wx:for="{{carts}}" wx:key="carts" style='display:flex;float:none '>
 
+        <view>
+          <!-- wx:if 是否选择显示不同图标 -->
+          <icon wx:if="{{item.selected}}" type="success" color="skyblue" bindtap="selectList" data-index="{{index}}" />
+          <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" />
+        </view>
+
+        <!-- 点击商品图片可跳转到商品详情 -->
+        <navigator url="../details/details?id={{item.id}}">
+          <image class="orderImg" src="{{item.image}}"></image>
+        </navigator>
+
+        <view class='orderDetail'>
+          <view>
+            <text class='orderDetail-name'>{{item.title}}</text>
+            <text class='orderDetail-other'>￥{{item.price}}</text>
+          </view>
+
+          <!-- 增加减少删除按钮 -->
+          <view class='orderDetail-number'>
+            <text bindtap="minusCount" data-index="{{index}}">-</text>
+            <text style='margin:0px 40px 0px 40px'>{{item.num}}</text>
+            <text bindtap="addCount" data-index="{{index}}">+</text>
+            <text bindtap="deleteList" data-index="{{index}}"> × </text>
+          </view>
+
+        </view>
+
+      </view>
       <view>
-        <!-- wx:if 是否选择显示不同图标 -->
-        <icon wx:if="{{item.selected}}" type="success" color="red" bindtap="selectList" data-index="{{index}}" />
-        <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" />
+        <button class='SubmitOrder' bindtap='toSubmitOrder'>提交订单</button>
       </view>
 
-      <!-- 点击商品图片可跳转到商品详情 -->
-      <navigator url="../details/details?id={{item.id}}">
-        <image class="orderImg" src="{{item.image}}"></image>
-      </navigator>
-
-      <view class='orderDetail'>
-        <view>
-          <text class='orderDetail-name'>{{item.title}}</text>
-          <text class='orderDetail-other'>￥{{item.price}}</text>
-        </view>
-
-        <!-- 增加减少删除按钮 -->
-        <view>
-          <text bindtap="minusCount" data-index="{{index}}">-</text>
-          <text style='margin:0px 40px 0px 40px'>{{item.num}}</text>
-          <text bindtap="addCount" data-index="{{index}}">+</text>
-          <text bindtap="deleteList" data-index="{{index}}"> × </text>
-        </view>
-
-      </view>
     </view>
-  <button class='SubmitOrder' bindtap='toSubmitOrder'>提交订单</button>
-
   </view>
-</view>
 
 
 
-<!-- 底部操作栏 -->
-<view class='bottom' style='margin-top:100px'>
-  <!-- wx:if 是否全选显示不同图标 -->
-  <icon wx:if="{{selectAllStatus}}" type="success_circle" color="#fff" bindtap="selectAll" />
-  <icon wx:else type="circle" color="#fff" bindtap="selectAll" />
-  <text>全选</text>
-  <!-- 总价 -->
-  <text style='float:right'>￥{{totalPrice}}</text>
+
+  <!-- 底部操作栏 -->
+  <view class='bottom' style='margin-top:100px'>
+    <!-- wx:if 是否全选显示不同图标 -->
+    <icon wx:if="{{selectAllStatus}}" type="success_circle" color="black" bindtap="selectAll" />
+    <icon wx:else type="circle" color="black" bindtap="selectAll" />
+    <text class='font1'>全选</text>
+    <!-- 总价 -->
+    <text style='float:right '>￥{{totalPrice}}</text>
+  </view>
 </view>
