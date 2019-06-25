@@ -18,18 +18,12 @@ Page({
       }
     ],
     merchants: {
-      HuangMenJi_region: null,
-      region_3: null,
-      phone: null,
-      rice_region: null,
-      BanFan_region: null,
-      drinks_region: null,
-      merchant_name: null,
-      region_1: null,
-      region_2: null,
       menu_id: null,
-      recommend:null,
-      image:null,
+      merchant_name: null,
+      phone: null,
+      publicity_image: null,
+      recommend: null,
+      merchant_database:null,
     }
   },
 
@@ -39,7 +33,7 @@ Page({
   onLoad: function(options) {
     var that = this;
     wx.request({
-      url: 'http://192.168.199.186:8080/weChat/findMenu.order',
+      url: 'http://192.168.199.161:8080/weChat/findMenu.order',
       method: 'post',
       data: that.data.merchants,
       header: {
@@ -48,7 +42,6 @@ Page({
       success: function(res) {
         that.setData({
           merchants: res.data,
-          //res代表success函数的事件对，data是固定的，list是数组
         })
         console.log(that.data.merchants);
       },
@@ -63,9 +56,13 @@ Page({
     var name = item.currentTarget.dataset.name;
     var text = item.currentTarget.dataset.text;
     var region_1 = item.currentTarget.dataset.region_1;
-    console.log(region_1);
+    var region_1_images = item.currentTarget.dataset.region_1_images;
+     region_1_images = JSON.stringify(region_1_images)
+    console.log(item.currentTarget.dataset);
+    console.log(region_1_images)
+    var region_2 = item.currentTarget.dataset.region_2;
     wx.navigateTo({
-      url: 'orderItem/orderItem?id=' + id + "&src=" + src + "&name=" + name + "&text=" + text + "&region_1=" + region_1
+      url: 'orderItem/orderItem?id=' + id + "&src=" + src + "&name=" + name + "&text=" + text + "&region_1=" + region_1 + "&region_1_images=" + region_1_images
     })
   },
   /**

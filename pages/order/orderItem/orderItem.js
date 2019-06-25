@@ -1,4 +1,5 @@
 // pages/order/orderItem/orderItem.js
+var app = getApp();
 Page({
 
   /**
@@ -9,8 +10,13 @@ Page({
     src: null,
     name: null,
     text: null,
+    price: 1,
     mregion_1:null,
+    mregion_2:null,
     region_1:{},
+    region_1_images:{},
+    region_2:{},
+    region_2_images:{},
   },
 
   /**
@@ -22,26 +28,40 @@ Page({
       src: options.src,
       name: options.name,
       text: options.text,
-      mregion_1: JSON.stringify(options.region_1).split("，"),
+      mregion_1: JSON.stringify(options.region_1).replace(/\"/g,"").split("，"),
+      region_1_images: options.region_1_images.replace('[', '').replace(']', '').replace(/\"/g,"").split(","),
     })
+    console.log(options);
+    console.log(this.data.region_1_images)
     for (let i = 0; i < this.data.mregion_1.length ; i++){
-      var dish = "region_1[" + i + "].dishName"
+      var dishName = "region_1[" + i + "].dishName"
+      var dishIndex = "region_1[" + i + "].dishIndex"
+      var dishNum = "region_1[" + i + "].dishNum"
+      var dishImg = "region_1[" + i + "].dishImg"
       this.setData({
-        [dish]: this.data.mregion_1[i]
+        [dishName]: this.data.mregion_1[i],
+        [dishIndex]: i,
+        [dishNum]:0,
+        [dishImg]: this.data.region_1_images[i]
       })
     }
-    console.log(this.data)
   },
-  addCount(e) {
-    const index = e.currentTarget.dataset.index;
-    let carts = this.data.carts;
-    let num = carts[index].num;
-    num = num + 1;
-    carts[index].num = num;
+  addToCart(e) {
+    var idx = e.currentTarget.dataset.item.dishIndex;
+    var mnum = this.data.region_1[idx].dishNum
+    var dishNum = "region_1[" + idx + "].dishNum"
+    mnum = mnum+1;
     this.setData({
-      carts: carts
-    });
-    this.getTotalPrice();
+      [dishNum]:mnum
+    })
+    // app.userdata.shopCar
+    app.userData.shopCar = {
+      merchants:this.data.name,
+      name: this.data.region_1[idx].dishName,
+      price :this.data.price,
+      num: mnum,
+    }
+    console.log(app.userData.shopCar);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -17,24 +17,6 @@
     </view>
 
   </view>
-<!-- 
-  <view class='myAllOrder'>
-    <view class='myOrderTitle'>订单信息：</view>
-    <view class='myOrderMsg' wx:for="{{food}}" wx:key="food">
-      <view class='myOrderMsgItem'>
-
-        <image class='orderImg' src='{{item.src}}' style='display:flex;float:left'></image>
-        <view class='orderDetail'>
-          <view class='orderDetail-name'>{{item.name}}</view>
-          <view class='orderDetail-other'>
-            <view style='display:flex;float:right'>{{item.price}}</view>
-            <view>{{item.num}}</view>
-          </view>
-        </view>
-      </view>
-    </view>
-  </view> -->
-
 
   <view class="myAllOrder">
     <!-- wx:for 渲染购物车列表 -->

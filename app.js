@@ -37,5 +37,6 @@ App({
   userData:{
     userinfo: null,
     userMsg:null,
+    shopCar:null,
   }
 })

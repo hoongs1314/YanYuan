@@ -56,5 +56,11 @@ padding-top:20rpx;
   width: 80%;
   margin: auto auto;
   font-size: 40rpx;
-  border-bottom: 1px solid #000;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid rgb(146, 146, 146);
+}
+.foodItemImg{
+  width: 100rpx;
+  height: 100rpx;
 }
