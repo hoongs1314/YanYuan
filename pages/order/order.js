@@ -19,12 +19,17 @@ Page({
     ],
     merchants: {
       menu_id: null,
-      merchant_name: null,
       phone: null,
       publicity_image: null,
       recommend: null,
-      merchant_database:null,
-    }
+      merchant_id: null,
+      merchant_name: null,
+      merchant_database: null,
+    },
+    merchant_id:{
+      "merchant_id":null,
+    },
+    toItem:[],
   },
 
   /**
@@ -51,18 +56,36 @@ Page({
     })
   },
   itemClick: function(item) {
+    var that = this;
     var id = item.currentTarget.dataset.id;
     var src = item.currentTarget.dataset.src;
     var name = item.currentTarget.dataset.name;
     var text = item.currentTarget.dataset.text;
-    var region_1 = item.currentTarget.dataset.region_1;
-    var region_1_images = item.currentTarget.dataset.region_1_images;
-     region_1_images = JSON.stringify(region_1_images)
-    console.log(item.currentTarget.dataset);
-    console.log(region_1_images)
-    var region_2 = item.currentTarget.dataset.region_2;
-    wx.navigateTo({
-      url: 'orderItem/orderItem?id=' + id + "&src=" + src + "&name=" + name + "&text=" + text + "&region_1=" + region_1 + "&region_1_images=" + region_1_images
+    var mmerchant_id = item.currentTarget.dataset.item.merchant_id;
+    this.data.merchant_id.merchant_id = mmerchant_id
+    console.log(this.data.merchant_id)
+    wx.request({
+      url: 'http://192.168.199.161:8080/weChat/findMerchant.order',
+      method: 'post',
+      data: this.data.merchant_id,
+      header: {
+        'content-type': 'application/json'
+        // 'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function(res) {
+        console.log(res)
+        var toItem = res.data;
+        console.log(toItem);
+        that.setData({
+          toItem: toItem
+        }),
+        wx.navigateTo({
+          url: 'orderItem/orderItem?id=' + id + "&src=" + src + "&name=" + name + "&text=" + text + "&toItem=" + toItem
+        })
+      },
+      fail: function(err) {
+        console.log("传输失败");
+      }
     })
   },
   /**

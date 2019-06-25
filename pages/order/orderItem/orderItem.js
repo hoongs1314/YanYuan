@@ -13,7 +13,7 @@ Page({
     price: 1,
     mregion_1:null,
     mregion_2:null,
-    region_1:{},
+    region:{},
     region_1_images:{},
     region_2:{},
     region_2_images:{},
@@ -23,28 +23,34 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var that = this;
     this.setData({
       id: options.id,
       src: options.src,
       name: options.name,
       text: options.text,
-      mregion_1: JSON.stringify(options.region_1).replace(/\"/g,"").split("，"),
-      region_1_images: options.region_1_images.replace('[', '').replace(']', '').replace(/\"/g,"").split(","),
+      // mregion_1: JSON.stringify(options.region_1).replace(/\"/g,"").split("，"),
+      // region_1_images: options.region_1_images.replace('[', '').replace(']', '').replace(/\"/g,"").split(","),
     })
-    console.log(options);
-    console.log(this.data.region_1_images)
-    for (let i = 0; i < this.data.mregion_1.length ; i++){
-      var dishName = "region_1[" + i + "].dishName"
-      var dishIndex = "region_1[" + i + "].dishIndex"
-      var dishNum = "region_1[" + i + "].dishNum"
-      var dishImg = "region_1[" + i + "].dishImg"
-      this.setData({
-        [dishName]: this.data.mregion_1[i],
-        [dishIndex]: i,
-        [dishNum]:0,
-        [dishImg]: this.data.region_1_images[i]
-      })
-    }
+    console.log(options.toItem)
+    var allmsg = options.toItem
+    // for (var i = 0; i < allmsg; i++)
+    //   console.log(allmsg[i])
+    // for(let i = 0; i<options.toItem.length; i++){
+    //   console.log(JSON.stringify(options.toItem[i]))
+    // }
+    // for (let i = 0; i < this.data.mregion_1.length ; i++){
+    //   var dishName = "region_1[" + i + "].dishName"
+    //   var dishIndex = "region_1[" + i + "].dishIndex"
+    //   var dishNum = "region_1[" + i + "].dishNum"
+    //   var dishImg = "region_1[" + i + "].dishImg"
+    //   this.setData({
+    //     [dishName]: this.data.mregion_1[i],
+    //     [dishIndex]: i,
+    //     [dishNum]:0,
+    //     [dishImg]: this.data.region_1_images[i]
+    //   })
+    // }
   },
   addToCart(e) {
     var idx = e.currentTarget.dataset.item.dishIndex;
