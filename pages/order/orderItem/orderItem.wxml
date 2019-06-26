@@ -5,40 +5,32 @@
   <view class='welcome ellipsis'>{{text}}</view>
 </view>
 <view class='allFood'>
-  <view bindtap='addToCart' class='foodItem' wx:for="{{region_1}}" data-item="{{item}}" wx:key="{{item.dishName}}" data-name="{{item.dishName}}" data-index="{{item.index}}" data-region_1_images='{{item.region_1_images}}'>
-  <image class='foodItemImg' src='{{item.dishImg}}'></image>
-    <view>{{item.dishName}}</view>
+  <view bindtap='addToCart' class='foodItem' wx:for="{{region}}" data-item="{{item}}" wx:key="{{item.id}}" data-index="{{item.dishIndex}}" data-name="{{item.food_name}}" data-food_image='{{item.food_image}}'>
+    <view>
+      <image class='foodItemImg' src='{{item.food_image}}' style="display:flex;float:left"></image>
+      <view class='foodItemName'>{{item.food_name}}</view>
+      <view class='addFood'>+</view>
+    </view>
   </view>
 </view>
-
-
-<!-- 购物车 -->
-<view class="drawer_screen" bindtap="showCartList" data-statu="close" wx:if="{{showCart}}"></view>
-<view class="cartlist-float" wx:if="{{showCart}}">
-  <view style='background:#F0F0F0;height:30px'>
-    <label class='label-cart-bar'>
-      <label style='padding:5px'>已选商品</label>
-    </label>
-    <label class='icon-clear' bindtap='clearCartList'>
-      <i class="iconfont icon-lajitong"></i>
-      <label class="label-clear">清空购物车</label>
-    </label>
-  </view>
-  <scroll-view scroll-y="true" class="{{cartList.length>5?'cart-scroll-list':''}}">
-
-    <view class='cart-list-box' wx:for="{{cartList}}" wx:key="unique" style='border-bottom:1px #E3E3E3 solid'>
-      <view class='list-info'>
-        <view>{{item.name}}</view>
-        <view class='list-info-size'>{{item.detail}}</view>
-      </view>
-      <view style='width:50%;padding:10px;'>
-        <view style='float:right'>
-          <label class='activity-color'>¥ {{item.sum}}.00</label>
-          <i class="iconfont icon-jian icon-li-circle" data-index="{{index}}" bindtap="decNumber"></i>
-          {{item.number}}
-          <i class="iconfont icon-jiahao2fill activity-color font20" data-index="{{index}}" bindtap="addNumber"></i>
+<view>
+  <view class='openCar' bindtap='openCar'>点击打开购物车</view>
+  <!--隐藏区域  -->
+  <view class='centData' wx:if="{{boolHidden}}" animation='{{animationData}}'>
+    <view>
+      <view class='cent'>
+        <view class='foodItem' wx:for="{{order}}" data-item='{{item}}' wx:key="{{item.merchants}}" data-name='{{item.name}}' data-num='{{item.num}}' data-price='{{price}}'>
+          <view>
+            <image class='foodItemImg' src='{{item.image}}' style="display:flex;float:left"></image>
+            <view class='foodItemName'>{{item.name}}</view>
+          </view>
+          <view class='foodItemDetil' style="display:flex;float:left">{{item.price}}元</view>
+          <view class='foodItemDetil'>{{item.num}}份</view>
         </view>
       </view>
+      <view class='close' wx:if="{{boolHidden}}" bindtap='closeHide'>
+        x
+      </view>
     </view>
-  </scroll-view>
+  </view>
 </view>

@@ -30,6 +30,7 @@ Page({
       "merchant_id":null,
     },
     toItem:[],
+    loadHidden:true,
   },
 
   /**
@@ -74,8 +75,7 @@ Page({
       },
       success: function(res) {
         console.log(res)
-        var toItem = res.data;
-        console.log(toItem);
+        var toItem = JSON.stringify(res.data);
         that.setData({
           toItem: toItem
         }),
