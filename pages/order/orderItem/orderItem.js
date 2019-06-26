@@ -10,9 +10,13 @@ Page({
     src: null,
     name: null,
     text: null,
+    menu_class:[],
     region: {},
     order: [],
+    totalPrice: 0,
+    itemNum: 0,
     total_price: 0,
+    time: 0
   },
 
   /**
@@ -20,56 +24,62 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    this.setData({
+    that.setData({
       id: options.id,
       src: options.src,
       name: options.name,
       text: options.text,
-      region: JSON.parse(options.toItem),
-      // mregion_1: JSON.stringify(options.region_1).replace(/\"/g,"").split("，"),
-      // region_1_images: options.region_1_images.replace('[', '').replace(']', '').replace(/\"/g,"").split(","),
+      region: JSON.parse(options.toItem)
     })
-    console.log(this.data.region)
-    for (let i = 0; i < this.data.region.length; i++) {
-      // console.log(this.data.region[i].food_name)
+    console.log(that.data.region)
+    var menu_class = that.data.menu_class
+    for (let i = 0; i < that.data.region.length; i++) {
+      // console.log(that.data.region[i].food_name)
       var dishIndex = "region[" + i + "].dishIndex"
       var dishNum = "region[" + i + "].dishNum"
-      this.setData({
+      menu_class.push(that.data.region[i].menu_class)
+      that.setData({
         [dishIndex]: i,
         [dishNum]: 0,
+        menu_class: menu_class
       })
     }
+    console.log(that.data.menu_class)
   },
   addToCart(e) {
-    var addName = this.data.region[idx].dishNum
-    // if(this.data.order.name.)
+    var that = this
     var idx = e.currentTarget.dataset.item.dishIndex;
-    var mnum = this.data.region[idx].dishNum
-    var dishNum = "region[" + idx + "].dishNum"
-    mnum = mnum + 1;
-    var selectorder = this.data.order,
-    var nowprice = this.data.region[idx].food_price //当前所选商品单价
-    var total_price = this.data.total_price //购物车总价
-    total_price = nowprice + total_price
-    this.setData({
-      [dishNum]: mnum,
-      total_price: total_price,
-    })
-      app.userData.shopCar = {
-        merchants: this.data.name,
-        name: this.data.region[idx].food_name,
-        image: this.data.region[idx].food_image,
-        price: this.data.region[idx].food_price,
-        num: mnum,
+    var addItem = {
+      merchants: that.data.name,
+      name: that.data.region[idx].food_name,
+      image: that.data.region[idx].food_image,
+      price: that.data.region[idx].food_price,
+      num: 1,
     }
-    selectorder.push(app.userData.shopCar);
-    app.userData.shopCar = this.data.order
-    this.setData({order:selectorder})
-    console.log(this.data.region);
-    console.log(this.data.order);
+    var totalPrice = that.data.totalPrice + that.data.region[idx].food_price;
+    var itemNum = that.data.itemNum + 1
+    var selectorder = that.data.order
+    selectorder.push(addItem);
+    that.setData({
+      order: selectorder,
+      totalPrice: totalPrice,
+      itemNum: itemNum
+    })
+    console.log("totalPrice   " + totalPrice)
+    console.log("itemNum   " + that.data.itemNum)
+    // app.userData.shopCar = addItem
+    console.log(that.data.order);
   },
 
-  openCar: function (e) {
+  clearCartList: function() {
+    this.setData({
+      order: [],
+      totalPrice: 0,
+      itemNum:0
+    });
+  },
+
+  openCar: function(e) {
     // 用that取代this，防止不必要的情况发生
     var that = this;
     // 创建一个动画实例
@@ -91,7 +101,7 @@ Page({
       boolHidden: true
     })
     // 设置setTimeout来改变y轴偏移量，实现有感觉的滑动
-    setTimeout(function () {
+    setTimeout(function() {
       animation.translateY(0).step()
       that.setData({
         animationData: animation.export()
@@ -99,7 +109,7 @@ Page({
     }, 200)
   },
   // 关闭购物车
-  closeHide: function (e) {
+  closeHide: function(e) {
     var that = this;
     var animation = wx.createAnimation({
       duration: 300,

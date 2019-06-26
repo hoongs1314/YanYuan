@@ -4,6 +4,14 @@
   <view class='name ellipsis'>{{name}}</view>
   <view class='welcome ellipsis'>{{text}}</view>
 </view>
+<!-- 左侧菜单 -->
+  <view class="list-left-menu">
+    <view wx:for="{{menu_class}}" wx:key="unique" class="{{index==activeIndex?'list-left-menu-box-selected':'list-left-menu-box-unselect'}}" data-index="{{index}}" bindtap='selectMenu'>
+      <view class="list-menu-name">{{item.name}}</view>
+    </view>
+  </view>
+
+<!--右侧菜单-->
 <view class='allFood'>
   <view bindtap='addToCart' class='foodItem' wx:for="{{region}}" data-item="{{item}}" wx:key="{{item.id}}" data-index="{{item.dishIndex}}" data-name="{{item.food_name}}" data-food_image='{{item.food_image}}'>
     <view>
@@ -14,7 +22,14 @@
   </view>
 </view>
 <view>
-  <view class='openCar' bindtap='openCar'>点击打开购物车</view>
+  
+  <view class='openCar' bindtap='openCar'>
+  <i class="iconfont icon-gouwuchefill gouwuche-icon {{totalPrice!=0?'activity-color':'' }}">
+    <span class="number-msg" wx:if="{{order.length!=0}}">{{itemNum}}</span>
+  </i>
+  <view class='gouwuche-price' wx:if="{{totalPrice==0}}">购物车是空的</view>
+  <view class='gouwuche-price' style='color:white;font-size:18px' wx:if="{{totalPrice!=0}}">¥ {{totalPrice}}.00</view>
+  </view>
   <!--隐藏区域  -->
   <view class='centData' wx:if="{{boolHidden}}" animation='{{animationData}}'>
     <view>
