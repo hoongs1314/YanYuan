@@ -5,6 +5,7 @@
     "pages/logs/logs",
     "pages/order/order",
     "pages/order/orderItem/orderItem",
+    "pages/order/balance/balance",
     "pages/mine/mine",
     "pages/mine/addperson/addperson",
     "pages/mine/myorder/myorder"

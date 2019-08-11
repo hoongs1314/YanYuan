@@ -38,14 +38,21 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
+    wx.showLoading({
+      title: '努力加载中',
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
     wx.request({
-      url: 'http://192.168.199.161:8080/weChat/findMenu.order',
+      url: 'http://49.232.44.19:8080/weChat/findMenu.order',
       method: 'post',
       data: that.data.merchants,
       header: {
         'content-type': 'application/json'
       },
       success: function(res) {
+        wx.hideLoading();
         that.setData({
           merchants: res.data,
         })
@@ -66,7 +73,7 @@ Page({
     this.data.merchant_id.merchant_id = mmerchant_id
     console.log(this.data.merchant_id)
     wx.request({
-      url: 'http://192.168.199.161:8080/weChat/findMerchant.order',
+      url: 'http://49.232.44.19:8080/weChat/findMerchant.order',
       method: 'post',
       data: this.data.merchant_id,
       header: {

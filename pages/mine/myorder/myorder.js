@@ -10,32 +10,8 @@ Page({
     hasList: false,
     totalPrice: 0,
     selectAll: true,
-    food: [{
-      src: "../images/2.jpg",
-      name: "黄焖鸡",
-      price: "32元",
-      num: "1份",
-    }, {
-      src: "../images/2.jpg",
-      name: "红烧狮子头",
-      price: "50元",
-      num: "3份"
-    }, {
-      src: "../images/2.jpg",
-      name: "巧克力冰淇淋",
-      price: "12元",
-      num: "1份"
-    }, {
-      src: "../images/2.jpg",
-      name: "蜜雪冰城",
-      price: "12元",
-      num: "9份"
-    }, {
-      src: "../images/2.jpg",
-      name: "百度音频",
-      price: "44元",
-      num: "1份"
-    }],
+    food: [],
+    order:[],
     userName: null,
     userSex: null,
     userRoom: null,
@@ -150,7 +126,7 @@ Page({
       success(res) {
         if (res.confirm) {
           wx.request({
-            url: 'http://192.168.199.161:8080/weChat/insertCustomer.order',
+            url: 'http://49.232.44.19:8080/weChat/insertCustomer.order',
             method:'post',
             data: that.data.customer,
             header: {

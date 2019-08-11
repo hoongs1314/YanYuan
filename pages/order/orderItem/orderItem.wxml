@@ -5,11 +5,11 @@
   <view class='welcome ellipsis'>{{text}}</view>
 </view>
 <!-- 左侧菜单 -->
-  <view class="list-left-menu">
-    <view wx:for="{{menu_class}}" wx:key="unique" class="{{index==activeIndex?'list-left-menu-box-selected':'list-left-menu-box-unselect'}}" data-index="{{index}}" bindtap='selectMenu'>
-      <view class="list-menu-name">{{item.name}}</view>
-    </view>
+<view class="list-left-menu">
+  <view wx:for="{{menu_class}}" wx:key="unique" class="{{index==activeIndex?'list-left-menu-box-selected':'list-left-menu-box-unselect'}}" data-index="{{index}}" bindtap='selectMenu'>
+    <view class="list-menu-name">{{item.name}}</view>
   </view>
+</view>
 
 <!--右侧菜单-->
 <view class='allFood'>
@@ -22,13 +22,16 @@
   </view>
 </view>
 <view>
-  
+
   <view class='openCar' bindtap='openCar'>
-  <i class="iconfont icon-gouwuchefill gouwuche-icon {{totalPrice!=0?'activity-color':'' }}">
-    <span class="number-msg" wx:if="{{order.length!=0}}">{{itemNum}}</span>
-  </i>
-  <view class='gouwuche-price' wx:if="{{totalPrice==0}}">购物车是空的</view>
-  <view class='gouwuche-price' style='color:white;font-size:18px' wx:if="{{totalPrice!=0}}">¥ {{totalPrice}}.00</view>
+    <i class="iconfont icon-gouwuchefill gouwuche-icon {{totalPrice!=0?'activity-color':'' }}">
+      <span class="number-msg" wx:if="{{order.length!=0}}">{{itemNum}}</span>
+    </i>
+    <view class='gouwuche-price' wx:if="{{totalPrice==0}}">购物车是空的</view>
+    <view class='gouwuche-price' style='color:white;font-size:18px' wx:if="{{totalPrice!=0}}">¥ {{totalPrice}}.00</view>
+  </view>
+  <view class="submit-btn {{totalPrice!=0?'activity-color-bg':'' }}" bindtap='goBalance'>
+    <view class="submit-btn-label {{totalPrice!=0?'color-white':'' }}">选好了</view>
   </view>
   <!--隐藏区域  -->
   <view class='centData' wx:if="{{boolHidden}}" animation='{{animationData}}'>

@@ -15,7 +15,6 @@ Page({
     order: [],
     totalPrice: 0,
     itemNum: 0,
-    total_price: 0,
     time: 0
   },
 
@@ -24,17 +23,19 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
+    wx.showLoading({
+      title: '努力加载中',
+    })
     that.setData({
       id: options.id,
       src: options.src,
       name: options.name,
       text: options.text,
-      region: JSON.parse(options.toItem)
+      region: JSON.parse(options.toItem),
     })
     console.log(that.data.region)
     var menu_class = that.data.menu_class
     for (let i = 0; i < that.data.region.length; i++) {
-      // console.log(that.data.region[i].food_name)
       var dishIndex = "region[" + i + "].dishIndex"
       var dishNum = "region[" + i + "].dishNum"
       menu_class.push(that.data.region[i].menu_class)
@@ -44,8 +45,9 @@ Page({
         menu_class: menu_class
       })
     }
-    console.log(that.data.menu_class)
+    wx.hideLoading();
   },
+  //向购物车中添加商品
   addToCart(e) {
     var that = this
     var idx = e.currentTarget.dataset.item.dishIndex;
@@ -70,7 +72,7 @@ Page({
     // app.userData.shopCar = addItem
     console.log(that.data.order);
   },
-
+  //清空购物车
   clearCartList: function() {
     this.setData({
       order: [],
@@ -78,7 +80,7 @@ Page({
       itemNum:0
     });
   },
-
+  //打开购物车
   openCar: function(e) {
     // 用that取代this，防止不必要的情况发生
     var that = this;
@@ -120,6 +122,18 @@ Page({
     that.setData({
       animationData: animation.export()
     });
+  },
+
+  goBalance: function () {
+    console.log(this.data.totalPrice)
+    if (this.data.totalPrice != 0) {
+      wx.setStorageSync('order', this.data.order);
+      wx.setStorageSync('total_price', this.data.totalPrice);
+      wx.setStorageSync('itemNum', this.data.itemNum);
+      wx.navigateTo({
+        url: '../balance/balance'
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
