@@ -1,4 +1,5 @@
 // pages/order/balance/balance.js
+var app = getApp();
 Page({
 
   /**
@@ -19,10 +20,60 @@ Page({
     })
     this.setData({
       order: wx.getStorageSync('order'),
-      totalPrice: wx.getStorageSync('totalPrice'),
+      totalPrice: wx.getStorageSync('total_price'),
       itemNum: wx.getStorageSync('itemNum') > 19 ? 3 : 0,
     })
-    console.log(this.data.order)
+  },
+
+  toSubmitOrder: function () {
+    var that = this;
+    that.setData({
+      customer: {
+        userName: app.userData.userinfo.name,
+        userSex: app.userData.userinfo.sex,
+        userRoom: app.userData.userinfo.room,
+        userPhone: app.userData.userinfo.phone
+      }
+    })
+    wx.showModal({
+      title: '订单确认',
+      content: '确认提交订单吗？',
+      confirmText: '确定',
+      cancelText: '我再想想',
+      success(res) {
+        if (res.confirm) {
+          wx.request({
+            url: 'http://49.232.44.19:8080/weChat/insertCustomer.order',
+            method: 'post',
+            data: that.data.customer,
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function (res) {
+              console.log(that.data.customer);
+            },
+            fail: function (err) {
+              console.log("传输失败");
+            }
+          })
+          console.log("确定");
+          console.log(that.data.customer);
+          wx.showToast({
+            title: '订单已提交',
+            duration: 2000,
+            success: function () {
+              setTimeout(function () {
+                wx.navigateBack({
+                  url: "../mine"
+                })
+              }, 2000)
+            }
+          })
+        } else {
+          console.log("我再想想");
+        }
+      }
+    })
   },
 
   /**

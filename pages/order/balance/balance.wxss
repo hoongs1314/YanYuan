@@ -140,6 +140,12 @@ page{
   font-size:14px;
   float:right;
 }
+.order-image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20px;
+  margin-left: 10px;
+}
 .note{
   padding:5px 15px;
   background:white;

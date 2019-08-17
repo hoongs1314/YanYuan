@@ -37,7 +37,7 @@ Page({
 
   toMyOrder: function() {
     wx.navigateTo({
-      url: '../mine/myorder/myorder'
+      url: '../order/balance/balance'
     })
   },
 
