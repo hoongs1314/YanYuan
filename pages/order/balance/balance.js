@@ -21,7 +21,7 @@ Page({
     this.setData({
       order: wx.getStorageSync('order'),
       totalPrice: wx.getStorageSync('total_price'),
-      itemNum: wx.getStorageSync('itemNum') > 19 ? 3 : 0,
+      itemNum: wx.getStorageSync('itemNum'),
     })
   },
 
@@ -32,7 +32,10 @@ Page({
         userName: app.userData.userinfo.name,
         userSex: app.userData.userinfo.sex,
         userRoom: app.userData.userinfo.room,
-        userPhone: app.userData.userinfo.phone
+        userPhone: app.userData.userinfo.phone,
+        order:this.data.order,
+        itemNum:this.data.itemNum,
+        totalPrice: this.data.totalPrice,
       }
     })
     wx.showModal({
@@ -50,7 +53,7 @@ Page({
               'content-type': 'application/json'
             },
             success: function (res) {
-              console.log(that.data.customer);
+              console.log("提交成功");
             },
             fail: function (err) {
               console.log("传输失败");

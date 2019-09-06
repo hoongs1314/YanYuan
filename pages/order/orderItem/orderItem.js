@@ -123,13 +123,14 @@ Page({
       animationData: animation.export()
     });
   },
-
   goBalance: function () {
     console.log(this.data.totalPrice)
     if (this.data.totalPrice != 0) {
       wx.setStorageSync('order', this.data.order);
       wx.setStorageSync('total_price', this.data.totalPrice);
       wx.setStorageSync('itemNum', this.data.itemNum);
+      console.log("itemNum");
+      console.log(this.data.itemNum);
       wx.navigateTo({
         url: '../balance/balance'
       })
